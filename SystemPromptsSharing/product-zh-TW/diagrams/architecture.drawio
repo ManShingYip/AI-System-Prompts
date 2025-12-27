@@ -1,0 +1,96 @@
+<mxfile host="app.diagrams.net" modified="2025-12-17T00:00:00.000Z" agent="Query/Action/Solo Framework" version="22.1.0">
+  <diagram name="Architecture" id="architecture-diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 使用者輸入層 -->
+        <mxCell id="2" value="使用者輸入（User Input）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="600" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 多任務檢測層 -->
+        <mxCell id="3" value="多任務檢測（Multi-task Detection）&#xa;偵測：「和」「還有」「以及」、逗號、編號&#xa;→ 是多任務？→ 讀取/更新 TASK_TRACKER.md" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="600" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 觸發詞檢測層 -->
+        <mxCell id="4" value="觸發詞檢測（Trigger Detection）&#xa;Solo 授權詞？→ Action 授權詞？→ 預設 Query" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="400" y="260" width="600" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 三大模式層 -->
+        <!-- Query Mode -->
+        <mxCell id="5" value="Query Mode&#xa;&#xa;• Summary&#xa;• 建議方案&#xa;• 禁止執行&#xa;• 任務佇列" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=#2E5C8A;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="420" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Action Mode -->
+        <mxCell id="6" value="Action Mode&#xa;&#xa;• 預執行確認&#xa;• 風險分級&#xa;• 雙重授權&#xa;• 任務進度" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5A623;strokeColor=#C77B00;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo Mode -->
+        <mxCell id="7" value="Solo Mode&#xa;&#xa;• 長時運行&#xa;• Self-test&#xa;• Checkpoint&#xa;• 任務追蹤" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#7ED321;strokeColor=#5A9B00;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="820" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- TASK_TRACKER 層 -->
+        <mxCell id="8" value="TASK_TRACKER.md（任務追蹤）&#xa;&#xa;• 任務佇列（待處理/進行中/已完成）&#xa;• 任務優先級與依賴關係&#xa;• 執行進度與時間戳記" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="400" y="540" width="600" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- 輸出層 -->
+        <mxCell id="9" value="格式化輸出（Formatted Output）&#xa;&#xa;Query: 繁中 Summary-first&#xa;Action: 執行摘要 + Audit log&#xa;Solo: 進度報告 + Checkpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="680" width="600" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭連接 -->
+        <mxCell id="10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="2" target="3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="11" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="3" target="4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Query Mode 箭頭 -->
+        <mxCell id="12" value="" style="endArrow=classic;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="4" target="5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Action Mode 箭頭 -->
+        <mxCell id="13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="4" target="6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo Mode 箭頭 -->
+        <mxCell id="14" value="" style="endArrow=classic;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="4" target="7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Query to TASK_TRACKER -->
+        <mxCell id="15" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.25;entryY=0;strokeWidth=2" edge="1" parent="1" source="5" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Action to TASK_TRACKER -->
+        <mxCell id="16" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="6" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo to TASK_TRACKER -->
+        <mxCell id="17" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.75;entryY=0;strokeWidth=2" edge="1" parent="1" source="7" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- TASK_TRACKER to Output -->
+        <mxCell id="18" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="8" target="9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

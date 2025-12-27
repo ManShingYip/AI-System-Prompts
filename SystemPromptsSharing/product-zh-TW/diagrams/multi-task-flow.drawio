@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" modified="2025-12-17T00:00:00.000Z" agent="Query/Action/Solo Framework" version="22.1.0">
+  <diagram name="Multi-task Flow" id="multi-task-flow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 使用者輸入 -->
+        <mxCell id="2" value="使用者輸入（包含多個任務）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="240" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 多任務偵測 -->
+        <mxCell id="3" value="AI 偵測多任務&#xa;（關鍵字：「和」「還有」「以及」、逗號、分號、數字編號）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="380" y="140" width="280" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 讀取追蹤表 -->
+        <mxCell id="4" value="讀取 TASK_TRACKER.md&#xa;（若不存在則建立）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="400" y="260" width="240" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 拆解任務 -->
+        <mxCell id="5" value="拆解為獨立任務&#xa;→ 更新任務佇列" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="400" y="360" width="240" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 執行任務 1 -->
+        <mxCell id="6" value="執行任務 1&#xa;→ 更新狀態為「進行中」" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="400" y="460" width="240" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 完成任務 1 -->
+        <mxCell id="7" value="完成任務 1&#xa;→ 更新狀態為「已完成」&#xa;→ 回報進度（1/3 已完成）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="380" y="560" width="280" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 執行任務 2 -->
+        <mxCell id="8" value="執行任務 2&#xa;→ 更新狀態...&#xa;→ 完成 → 回報進度（2/3 已完成）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="380" y="680" width="280" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 執行任務 3 -->
+        <mxCell id="9" value="執行任務 3&#xa;→ 完成" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="400" y="800" width="240" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 最終摘要 -->
+        <mxCell id="10" value="最終摘要&#xa;「所有 3 項任務已完成 ✅」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="900" width="240" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭連接 -->
+        <mxCell id="11" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="2" target="3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="12" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="3" target="4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="4" target="5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="14" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="5" target="6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="15" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="6" target="7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="16" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="7" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="17" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="8" target="9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="18" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="9" target="10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

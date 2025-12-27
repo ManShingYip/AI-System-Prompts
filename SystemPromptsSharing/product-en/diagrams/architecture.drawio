@@ -1,0 +1,95 @@
+﻿<mxfile host="app.diagrams.net" modified="2025-12-17T00:00:00.000Z" agent="Query/Action/Solo Framework" version="22.1.0">
+  <diagram name="Architecture" id="architecture-diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- User Input Layer -->
+        <mxCell id="2" value="User Input" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="600" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Multi-task Detection Layer -->
+        <mxCell id="3" value="Multi-task Detection&#xa;Detect: &quot;and&quot;, &quot;also&quot;, commas, numbering&#xa;→ Is multi-task? → Read/Update TASK_TRACKER.md" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="600" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Trigger Detection Layer -->
+        <mxCell id="4" value="Trigger Detection&#xa;Solo auth? → Action auth? → Default Query" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="400" y="260" width="600" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Query Mode -->
+        <mxCell id="5" value="Query Mode&#xa;&#xa;• Summary&#xa;• Suggestions&#xa;• No Execute&#xa;• Task Queue" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=#2E5C8A;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="420" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Action Mode -->
+        <mxCell id="6" value="Action Mode&#xa;&#xa;• Pre-execution Confirm&#xa;• Risk Level&#xa;• Double Auth&#xa;• Task Progress" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5A623;strokeColor=#C77B00;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo Mode -->
+        <mxCell id="7" value="Solo Mode&#xa;&#xa;• Long Running&#xa;• Self-test&#xa;• Checkpoint&#xa;• Task Tracking" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#7ED321;strokeColor=#5A9B00;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="820" y="380" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- TASK_TRACKER Layer -->
+        <mxCell id="8" value="TASK_TRACKER.md (Task Tracking)&#xa;&#xa;• Task Queue (Pending/In Progress/Completed)&#xa;• Task Priority &amp; Dependencies&#xa;• Progress &amp; Timestamps" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="400" y="540" width="600" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- Output Layer -->
+        <mxCell id="9" value="Formatted Output&#xa;&#xa;Query: Summary-first&#xa;Action: Execution Summary + Audit log&#xa;Solo: Progress Report + Checkpoint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="680" width="600" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow Connections -->
+        <mxCell id="10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="2" target="3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="11" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="3" target="4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Query Mode Arrow -->
+        <mxCell id="12" value="" style="endArrow=classic;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="4" target="5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Action Mode Arrow -->
+        <mxCell id="13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="4" target="6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo Mode Arrow -->
+        <mxCell id="14" value="" style="endArrow=classic;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="4" target="7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Query to TASK_TRACKER -->
+        <mxCell id="15" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.25;entryY=0;strokeWidth=2" edge="1" parent="1" source="5" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Action to TASK_TRACKER -->
+        <mxCell id="16" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="6" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo to TASK_TRACKER -->
+        <mxCell id="17" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.75;entryY=0;strokeWidth=2" edge="1" parent="1" source="7" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- TASK_TRACKER to Output -->
+        <mxCell id="18" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="8" target="9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

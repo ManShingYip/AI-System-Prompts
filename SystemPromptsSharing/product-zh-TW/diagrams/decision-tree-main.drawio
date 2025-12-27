@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net" modified="2025-12-17T00:00:00.000Z" agent="Query/Action/Solo Framework" version="22.1.0">
+  <diagram name="Decision Tree Main" id="decision-tree-main">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 使用者輸入 -->
+        <mxCell id="2" value="使用者輸入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 多任務檢測 -->
+        <mxCell id="3" value="偵測多任務？&#xa;（關鍵字/編號/逗號）" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="480" y="140" width="240" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- 讀取 TASK_TRACKER -->
+        <mxCell id="4" value="讀取/更新&#xa;TASK_TRACKER.md" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="280" y="160" width="140" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 合併路徑 -->
+        <mxCell id="5" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000" vertex="1" parent="1">
+          <mxGeometry x="595" y="280" width="10" height="10" as="geometry" />
+        </mxCell>
+        
+        <!-- 觸發詞檢測 -->
+        <mxCell id="6" value="包含觸發詞？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="520" y="330" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo 授權詞 -->
+        <mxCell id="7" value="Solo&#xa;授權詞？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#7ED321;strokeColor=#5A9B00;fontSize=11;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="280" y="450" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Action 授權詞 -->
+        <mxCell id="8" value="Action&#xa;授權詞？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#F5A623;strokeColor=#C77B00;fontSize=11;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="460" y="450" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 預設 Query -->
+        <mxCell id="9" value="預設 Query" style="rhombus;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=#2E5C8A;fontSize=11;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="450" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Solo Mode -->
+        <mxCell id="10" value="Solo Mode&#xa;長時運行" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#7ED321;strokeColor=#5A9B00;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="280" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Action Mode -->
+        <mxCell id="11" value="Action Mode&#xa;執行變更" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5A623;strokeColor=#C77B00;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="460" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Query Mode -->
+        <mxCell id="12" value="Query Mode&#xa;分析與建議" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A90E2;strokeColor=#2E5C8A;fontSize=12;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：使用者輸入 → 多任務檢測 -->
+        <mxCell id="13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="2" target="3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：多任務檢測 → 讀取 TASK_TRACKER（是） -->
+        <mxCell id="14" value="是" style="endArrow=classic;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;strokeWidth=2" edge="1" parent="1" source="3" target="4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：TASK_TRACKER → 合併點 -->
+        <mxCell id="15" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0;entryY=0.5;strokeWidth=2" edge="1" parent="1" source="4" target="5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：多任務檢測 → 合併點（否） -->
+        <mxCell id="16" value="否" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="3" target="5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：合併點 → 觸發詞檢測 -->
+        <mxCell id="17" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="5" target="6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：觸發詞檢測 → Solo 授權詞（是） -->
+        <mxCell id="18" value="是" style="endArrow=classic;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="6" target="7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：觸發詞檢測 → Action 授權詞（是） -->
+        <mxCell id="19" value="是" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="6" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：觸發詞檢測 → 預設 Query（否） -->
+        <mxCell id="20" value="否" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="6" target="9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：Solo 授權詞 → Solo Mode（是） -->
+        <mxCell id="21" value="是" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="7" target="10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：Action 授權詞 → Action Mode（是） -->
+        <mxCell id="22" value="是" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="8" target="11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- 箭頭：預設 Query → Query Mode -->
+        <mxCell id="23" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2" edge="1" parent="1" source="9" target="12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
