@@ -52,11 +52,7 @@ A system prompt framework designed for GitHub Copilot that makes AI assistants:
 - 時間衰減演算法：9 個閾值（3h→100%, 6h→95%, 1d→90%...90d→5%）
 - Time decay algorithm: 9 thresholds (3h→100%, 6h→95%, 1d→90%...90d→5%)
 
-### 3️⃣ 三模式架構 Three-Mode Architecture
-
-- **Query Mode**：日常分析與建議（預設）
-- **Action Mode**：需明確授權詞才執行（如「請執行」「confirm」「go ahead」）
-- **Solo Mode**：長時自主運行，定期 checkpoint 回報
+### 3️⃣ **Query Mode Only**
 
 ### 4️⃣ 架構之旅 Architecture Highlights
 
