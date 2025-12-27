@@ -1,7 +1,7 @@
 # Query
 
-> **防止 AI 做蠢事：安全可控的三模式 AI 助手框架**
-> **Prevent AI from Doing Stupid Things: A Safe and Controllable Three-Mode AI Assistant Framework**
+> **防止 AI 做蠢事：安全可控的AI 助手框架**
+> **Prevent AI from Doing Stupid Things: A Safe and Controllable AI Assistant Framework**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-2.0-blue.svg)](./product-en/CHANGELOG.md)
